@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>NetfliKera</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+</head>
+
+<body>
+
+	<header>
+
+		<nav class="nav">
+			<img class="logo" src="img/netflix-logo.png">
+			<ul>
+				<li><a class="" href="#">Início</a></li>
+				<li><a class="" href="#sec-title">Minha lista</a></li>
+				<li><a class="" href="#footer">Contato</a></li>
+
+			</ul>
+			<a href="#"><img class="img-icon perfil" src="img/perfil.jpeg"></a>
+			<a href="#"><img class="img-icon" src="img/git-icon.png"></a>
+			<a href="#"><img class="img-icon" src="img/linkedin-icon.png"></a>
+		</nav>
+
+
+		<div class="div-header">
+
+			<h4><img src="img/img-icon/netflix.svg" /> SÉRIE</h4>
+			<img class="logoHeader" src="/img/img-logo/logo-the-internship.png" />
+			<h1 class="h1">André Martins </h1>
+			<h3> 3º Temporada<span>(Semestre)</span></h3>
+
+			<p id="p-capa">
+				Esta é a história de André que após largar tudo e iniciar
+				na universidade aos 33 anos(2019), deposita sua esperaça de futuro
+				em sua capacidade de aprender novas tecnologias.
+			</p>
+			<button>► Assistir</button>
+			<button>® Minha lista</button>
+			<button>© Mais informações</button>
+			<div id="div-vinheta">
+				<audio id="vinheta" src="audio/VinNetflix.mp3" preload="auto"></audio>
+				<div class="div-vinheta-icon">
+					<img class=" img-icon-vinheta" src="img/img-icon/icon-vin.png"
+						onclick="document.getElementById('vinheta').play()">
+				</div>
+				<div class="vinheta-div-16">
+					<div class="div-16">
+						<div class="int-16">34</div>
+						<div class="idade">anos</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</header>
+
+	<h3 id="sec-title">Minha Lista</h3>
+
+	<section class="section">
+		<article id="article">
+			<div id="item-1" onclick="showItem1(event)" class="item">
+				<a href="#sec-title"><img src="img/robots-img.png" /></a>
+				<figcaption>Apresentação</figcaption>
+			</div>
+			<div id="item-2" onclick="showItem2(event)" class="item">
+				<a href="#sec-title"><img src="img/img-item/item-second-article1.jpg" /></a>
+				<figcaption>Currículo</figcaption>
+			</div>
+			<div id="item-3" onclick="showItem3(event)" class="item">
+				<a href="#sec-title"><img src="img/img-item/item-third-article1.jpg" /></a>
+				<figcaption>Portfólio</figcaption>
+			</div>
+			<div id="item-4" onclick="showItem4(event)" class="item">
+				<a href="#sec-title"><img src="img/img-item/item-first-article2.jpg" /></a>
+				<figcaption>Favoritos</figcaption>
+			</div>
+		</article>
+	</section>
+
+
+	<main id="main">
+		<div class="div-main">
+			<h4>Série</h4>
+			<h1>André Martins</h1>
+			<h4>3º Temporada <span>(Semestre)</span></h4>
+			<p>
+				Após largar tudo para se dedicar ao antigo sonho de ser
+				programador, André inicía na universidade aos 33 anos(2019)
+				e mergulha de vez no mundo da tecnologia.
+			</p>
+		</div>
+	</main>
+	<footer id="footer">
+		<div class="footer">
+			<p>CONTATO <span>FONE: (51) 9.9893.8186</span><br><span>EMAIL: andreluismartins2010@hotmail.com</span></p>
+		</div>
+	</footer>
+
+	<script src="index.js"></script>
+</body>
+
+</html>
