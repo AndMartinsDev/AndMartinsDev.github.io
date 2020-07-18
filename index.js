@@ -9,10 +9,11 @@ function scrollFunction() {
   }
 }
 
-// Áudio
 
-// var v = document.getElementsByTagName("audio")[0];
-// v.play();
+
+// Áudio
+var v = document.getElementsByTagName("audio")[0];
+v.play();
 
 
 // **Ações a partir do clique nos itens **
