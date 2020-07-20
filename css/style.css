@@ -67,20 +67,26 @@ header {
 
 
 button {
-
+	border: none;
+	color:white;
 	margin-top: 4vh;
 	background-color: rgba(2, 2, 2, 0.306);
 	min-width: 12vw;
 	height: 5.6vh;
-	border: none;
 	border-radius: 3px;
-	color:white;
 	font-size: 1em;
+	outline-style: none;
 }
 button:hover {
 	background-color: white;
 	color: #5a5a5a;
 }
+button a {
+	list-style: none;
+	text-decoration: none;
+	text-transform: none;
+}
+
 #sec-title {
 	margin-left: 10%;
 	margin-top:-3%;
