@@ -261,7 +261,7 @@ figcaption {
 /* MAIN */
 main {
 	clear: both;
-	background-image: linear-gradient( to right, black 25%,transparent), url(../img/robots-img.png);
+	/* background-image: linear-gradient( to right, black 25%,transparent), url(../img/robots-img.png); */
 	background-attachment: scroll;
 	background-position-x: center;
 	background-position-y: center;

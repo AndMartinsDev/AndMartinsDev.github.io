@@ -14,75 +14,6 @@ var v = document.getElementsByTagName("audio")[0];
 v.play();
 
 
-// **Ações a partir do clique nos itens **
-
-// document.getElementById('item-1').onclick = function printItens() {
-
-//   //  Seleciona o Item Colocando a Borda Branca
-//   const iten1 = document.getElementById('item-1').classList.add("item-Js")
-//   const iten2 = document.getElementById('item-2').classList.remove("item-Js")
-//   const iten3 = document.getElementById('item-3').classList.remove("item-Js")
-//   const iten4 = document.getElementById('item-4').classList.remove("item-Js")
-
-
-//   // Troca o Background para a foto do Item.
-//   document.getElementsByTagName('main')[0].style.backgroundImage = "linear-gradient( to right, black 25%,transparent), url('img/robots-img.png')";
-
-//   // Incere as informações do Item selecionado.
-
-//   //...
-
-// }
-
-// document.getElementById('item-2').onclick = function printItens() {
-
-//   //  Seleciona o Item Colocando a Borda Branca
-//   const iten1 = document.getElementById('item-1').classList.remove("item-Js")
-//   const iten2 = document.getElementById('item-2').classList.add("item-Js")
-//   const iten3 = document.getElementById('item-3').classList.remove("item-Js")
-//   const iten4 = document.getElementById('item-4').classList.remove("item-Js")
-
-//   // Troca o Background para a foto do Item.
-//   document.getElementsByTagName('main')[0].style.backgroundImage = "linear-gradient( to right, black 25%,transparent), url('img/img-item/item-second-article1.jpg')";
-
-//   // Incere as informações do Item selecionado.
-
-//   //...
-
-// }
-
-// document.getElementById('item-3').onclick = function printItens() {
-
-//   //  Seleciona o Item Colocando a Borda Branca
-//   const iten1 = document.getElementById('item-1').classList.remove("item-Js")
-//   const iten2 = document.getElementById('item-2').classList.remove("item-Js")
-//   const iten3 = document.getElementById('item-3').classList.add("item-Js")
-//   const iten4 = document.getElementById('item-4').classList.remove("item-Js")
-
-//   // Troca o Background para a foto do Item.
-//   document.getElementsByTagName('main')[0].style.backgroundImage = "linear-gradient( to right, black 25%,transparent), url('img/img-item/item-third-article1.jpg')";
-
-//   // Incere as informações do Item selecionado.
-
-//   //...
-
-// }
-// document.getElementById('item-4').onclick = function printItens() {
-
-//   //  Seleciona o Item Colocando a Borda Branca
-//   const iten1 = document.getElementById('item-1').classList.remove("item-Js")
-//   const iten2 = document.getElementById('item-2').classList.remove("item-Js")
-//   const iten3 = document.getElementById('item-3').classList.remove("item-Js")
-//   const iten4 = document.getElementById('item-4').classList.add("item-Js")
-
-//   // Troca o Background para a foto do Item.
-//   document.getElementsByTagName('main')[0].style.backgroundImage = "linear-gradient( to right, black 25%,transparent), url('img/img-item/item-first-article2.jpg')";
-
-//   // Incere as informações do Item selecionado.
-
-//   //...
-// }
-
 const itens = [
   {
     name: 'Currículo',
@@ -106,10 +37,20 @@ const itens = [
   },
 ];
 
+function handelClick(itemName) {
+  itens.forEach((currentItem) => {
+    currentItem.selected = false;
+    if (itemName === currentItem.name){
+      document.getElementsByTagName('main')[0].style.backgroundImage = `linear-gradient( to right, black 25%,transparent), url(${currentItem.image})`;
+      currentItem.selected = true;
+    }
+  })
+  renderInfo();
+}
 
 const itensModel = function (itens) {
   return `
-    <div id="item-1" class="item">
+    <div id="item-1" onclick="handelClick('${itens.name}')" class="item">
       <a href="#sec-title"><img src="${itens.image}" /></a>
       <figcaption>${itens.name}</figcaption>
     </div>`;
@@ -123,47 +64,25 @@ function renderItens () {
 }
 renderItens();
 
-
-const info = `
-  <div class="div-main">
-    <h4>Série</h4>
-    <h1>André Martins</h1>
-    <h4>3º Temporada <span>(Semestre)</span></h4>
-    <p>
-      Após largar tudo para se dedicar ao antigo sonho de ser
-      programador, André inicía na universidade aos 34 anos(2019)
-      e mergulha de vez no mundo da tecnologia.
-    </p>
-  </div>`
-;
+const info = function (itens) {
+  if (itens.selected == true) {
+    return `
+    <div class="div-main">
+      <h4>Série</h4>
+      <h1>${itens.name}</h1>
+      <h4>3º Temporada <span>(Semestre)</span></h4>
+      <p>
+        Após largar tudo para se dedicar ao antigo sonho de ser
+        programador, André inicía na universidade aos 34 anos(2019)
+        e mergulha de vez no mundo da tecnologia.
+      </p>
+    </div>`;
+  }
+}
 
 function renderInfo() {
   const $infoTemplate = document.querySelector('.info');
-  $infoTemplate.innerHTML = info;
+  $infoTemplate.innerHTML = itens.map((iten) => {
+    return info(iten);
+  }).join('');
 }
-renderInfo();
-
-
-
-
-
-
-
-
-
-{/* <div id="item-1" onclick="showItem1(event)" class="item">
-<a href="#sec-title"><img src="img/robots-img.png" /></a>
-<figcaption>Currículo</figcaption>
-</div>
-<div id="item-2" onclick="showItem2(event)" class="item">
-<a href="#sec-title"><img src="img/img-item/item-second-article1.jpg" /></a>
-<figcaption>Cursos</figcaption>
-</div>
-<div id="item-3" onclick="showItem3(event)" class="item">
-<a href="#sec-title"><img src="img/img-item/item-third-article1.jpg" /></a>
-<figcaption>Portfólio</figcaption>
-</div>
-<div id="item-4" onclick="showItem4(event)" class="item">
-<a href="#sec-title"><img src="img/img-item/item-first-article2.jpg" /></a>
-<figcaption>Favoritos</figcaption>
-</div> */}
