@@ -2,7 +2,6 @@
 	font-family: sans-serif;
 	font-weight: 600;
 }
-
 html, body {
 	box-sizing: border-box;
 	background: #000000;
@@ -10,11 +9,9 @@ html, body {
 	margin: 0;
 	padding: 0;
 }
-
 a {
-	transition: all 1000ms;
+	transition: all 5000ms;
 }
-
 
 /* HEADER */
 header {
@@ -26,19 +23,15 @@ header {
 	background-size: 220vh;
 	height: 98Vh;
 }
-
 .div-header {
 	margin-left: 4%;
-	/* letter-spacing: 1px; */
 	color:rgb(76, 76, 76);
 	padding-top: 18vh;
 }
-
 .div-header span {
 	font-style: italic;
 	font-size: 0.8em;
 }
-
 .div-header h4 {
 	margin: 0;
 }
@@ -46,26 +39,20 @@ header {
 	width: 30px;
 	margin-bottom: -5px;
 }
-
 .logoHeader {
 	margin: 0;
 	width: 300px;
 }
-
 .h1 {
 	margin: 0;
 }
-
 .div-header p {
 	font-size: 1em;
 	width: 500px;
 	max-width: 90%;
 	max-height: 15vh;
-	/* overflow: hidden; */
 	text-align: justify;
 }
-
-
 button {
 	border: none;
 	color:white;
@@ -80,13 +67,13 @@ button {
 button:hover {
 	background-color: white;
 	color: #5a5a5a;
+	
 }
 button a {
 	list-style: none;
 	text-decoration: none;
 	text-transform: none;
 }
-
 #sec-title {
 	margin-left: 10%;
 	margin-top:-3%;
@@ -99,7 +86,6 @@ button a {
 	display: flex;
 	width: 140px;
 	height: 30px;
-
 }
 .div-vinheta-icon {
 	background-color: #888888;
@@ -122,10 +108,11 @@ button a {
 }
 .div-16 {
 	margin-left: 10px;
+	text-align: center;
 	width: 30px;
 	height: 30px;
 	color: white;
-	background-color:#ad3838;
+	background-color:#0a9c2a;
 	border-radius: 8px;
 }
 .int-16 {
@@ -148,25 +135,21 @@ nav {
 	transition: all 800ms;
 	height: 7.5vh;
 }
-
 .nav {
 	width: 100%;
 	background-color: none;
 	padding-top: 21px;
 	z-index: 1;
 }
-
 ul {
 	display: inline-flex;
 	justify-content: space-between;
 	width: 230px;
 	margin-top: 4px;
 }
-
 ul li {
 	list-style: none;
 }
-
 ul li a {
 	text-decoration: none;
 	text-transform: none;
@@ -177,11 +160,9 @@ ul li a {
 ul li a:hover {
 	color: #a5a5a5;
 }
-
 .black {
 	background-color: #000000;
 }
-
 .logo {
 	float: left;
 	width: 93px;
@@ -190,34 +171,26 @@ ul li a:hover {
 	margin-right: 0.5%;
 	margin-top: 1px;
 }
-
 .img-icon {
 	width: 30px;
 	height: 30px;
 	float: right;
 	margin-right: 20px;
 }
-
 .perfil {
 	margin-right: 50px;
 }
-
-
-
 
 /* SECTION */
 section {
 	background-image: linear-gradient( to top, black 75%,transparent);
 	margin-top: 0px;
 	height: 26vh;
-
 }
-
 .section article {
 	position: relative;
 	margin-left: 8%;
 }
-
 .section article .item {
 	position: relative;
 	float: left;
@@ -247,30 +220,35 @@ figcaption {
 	color: #afafaf;
 	margin-top: -25%;
 	margin-left: 5%;
-	
 }
 
 /* SECTITION - JS */
 .item-Js img {
 	border: solid 4px;
 	color: #fff;
-	
 }
-
 
 /* MAIN */
 main {
 	clear: both;
-	/* background-image: linear-gradient( to right, black 25%,transparent), url(../img/robots-img.png); */
 	background-attachment: scroll;
 	background-position-x: center;
 	background-position-y: center;
 	background-repeat: no-repeat;
 	background-size: 220vh;
-	height: 80vh;
-	/* background-position: 100%; */
+	height: 70vh;
 }
-
+.x {
+	height: 50px;
+	width: 50px;
+	min-width: 40px;
+	float: right;
+	border-radius: 50%;
+	margin-right: 5%;
+}
+.hidden {
+	display: none;
+}
 .div-main {
 	color:#888888;
 	margin-left: 3%;
@@ -278,19 +256,14 @@ main {
 	width: 500px;
 	max-width: 90%;
 	max-height: 15vh;
-	/* overflow: hidden; */
 	text-align: justify;
 }
 .div-main p {
 	font-size: 0.8em;
-
-	
 }
 .div-main h4 span {
 	font-style: italic;
-
 }
-
 
 /* FOOTER */
 footer {

@@ -1,6 +1,5 @@
 // Transição do fade do menu
 window.onscroll = function () { scrollFunction() };
-
 function scrollFunction() {
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
     document.querySelector('.nav').classList.add("black");
@@ -12,7 +11,6 @@ function scrollFunction() {
 // Áudio
 var v = document.getElementsByTagName("audio")[0];
 v.play();
-
 
 const itens = [
   {
@@ -42,6 +40,7 @@ function handelClick(itemName) {
     currentItem.selected = false;
     if (itemName === currentItem.name){
       document.getElementsByTagName('main')[0].style.backgroundImage = `linear-gradient( to right, black 25%,transparent), url(${currentItem.image})`;
+      document.getElementsByTagName('main')[0].classList.remove("hidden");
       currentItem.selected = true;
     }
   })
@@ -50,7 +49,7 @@ function handelClick(itemName) {
 
 const itensModel = function (itens) {
   return `
-    <div id="item-1" onclick="handelClick('${itens.name}')" class="item">
+    <div name="item" onclick="handelClick('${itens.name}')" class="item">
       <a href="#sec-title"><img src="${itens.image}" /></a>
       <figcaption>${itens.name}</figcaption>
     </div>`;
@@ -64,9 +63,15 @@ function renderItens () {
 }
 renderItens();
 
+function closeInfo() {
+  document.getElementsByTagName('main')[0].classList.add("hidden");
+  renderInfo();
+}
+
 const info = function (itens) {
   if (itens.selected == true) {
     return `
+    <button class="x" onclick="closeInfo()">X</button>
     <div class="div-main">
       <h4>Série</h4>
       <h1>${itens.name}</h1>
